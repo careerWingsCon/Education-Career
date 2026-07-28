@@ -7,23 +7,23 @@ interface KeralaBoardLogoProps {
 
 export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = '', size = 'responsive' }) => {
   return (
-    <div className={`flex items-center justify-center ${className}`}>
+    <div className={`flex items-center justify-center w-full ${className}`}>
       <svg
-        viewBox="0 0 780 220"
+        viewBox="0 0 820 215"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={
           size === 'sm'
-            ? 'h-12 w-auto'
+            ? 'h-10 w-auto'
             : size === 'md'
-            ? 'h-16 w-auto'
+            ? 'h-14 w-auto'
             : size === 'lg'
-            ? 'h-24 w-auto'
-            : 'w-full max-w-[550px] sm:max-w-[650px] h-auto drop-shadow-xs'
+            ? 'h-20 w-auto'
+            : 'w-full max-w-[500px] sm:max-w-[600px] md:max-w-[660px] h-auto drop-shadow-xs'
         }
       >
         {/* ==================== LEFT EMBLEM ==================== */}
-        <g id="EmblemGroup">
+        <g id="EmblemGroup" transform="translate(15, 0)">
           {/* 3 Stars at the top */}
           <path d="M110 18 L112.5 24 L119 24.5 L114 29 L115.5 35 L110 31.5 L104.5 35 L106 29 L101 24.5 L107.5 24 Z" fill="#0B387A" />
           <path d="M85 24 L87.2 29.5 L93 30 L88.5 34 L89.8 39.5 L85 36.5 L80.2 39.5 L81.5 34 L77 30 L82.8 29.5 Z" fill="#0B387A" />
@@ -131,37 +131,37 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
           {/* Top Line: KERALA */}
           <text
             x="0"
-            y="90"
+            y="88"
             fill="#0B387A"
             fontFamily="'Arial Black', 'Helvetica Neue', 'Impact', sans-serif"
             fontWeight="900"
-            fontSize="78"
+            fontSize="72"
             letterSpacing="2"
           >
             KERALA
           </text>
 
           {/* Top Divider Line under KERALA */}
-          <line x1="0" y1="106" x2="520" y2="106" stroke="#0B387A" strokeWidth="2.5" />
+          <line x1="0" y1="104" x2="520" y2="104" stroke="#0B387A" strokeWidth="2.5" />
 
           {/* Middle Line: BOARD OF HIGHER SECONDARY EXAMINATION */}
           <text
             x="0"
-            y="142"
+            y="140"
             fill="#126B2E"
             fontFamily="'Arial Black', 'Arial', 'Helvetica Neue', sans-serif"
             fontWeight="900"
-            fontSize="24"
-            letterSpacing="0.8"
+            fontSize="20"
+            letterSpacing="0.1"
           >
             BOARD OF HIGHER SECONDARY EXAMINATION
           </text>
 
           {/* Bottom Divider Line under BOARD OF HIGHER... */}
-          <line x1="0" y1="156" x2="520" y2="156" stroke="#0B387A" strokeWidth="2.5" />
+          <line x1="0" y1="154" x2="520" y2="154" stroke="#0B387A" strokeWidth="2.5" />
 
           {/* Bottom Line: LEARN • GROW • SUCCEED with Side Lines */}
-          <g transform="translate(0, 192)">
+          <g transform="translate(0, 188)">
             {/* Left rule */}
             <line x1="0" y1="-7" x2="80" y2="-7" stroke="#0B387A" strokeWidth="2.5" />
 
@@ -172,17 +172,18 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
               fill="#0B387A"
               fontFamily="Arial, 'Helvetica Neue', sans-serif"
               fontWeight="800"
-              fontSize="20"
-              letterSpacing="2"
+              fontSize="18"
+              letterSpacing="1.8"
             >
               LEARN • GROW • SUCCEED
             </text>
 
             {/* Right rule */}
-            <line x1="440" y1="-7" x2="520" y2="-7" stroke="#0B387A" strokeWidth="2.5" />
+            <line x1="435" y1="-7" x2="520" y2="-7" stroke="#0B387A" strokeWidth="2.5" />
           </g>
         </g>
       </svg>
     </div>
   );
 };
+

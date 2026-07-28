@@ -237,9 +237,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
             </p>
           </div>
         </div>
-        <span className="text-xs bg-sky-950 text-sky-200 px-2.5 py-1 rounded border border-sky-700 font-mono font-semibold">
-          Session {selectedYear}
-        </span>
       </div>
 
       <div className="p-5 sm:p-7">
