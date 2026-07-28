@@ -9,7 +9,7 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <svg
-        viewBox="0 0 700 220"
+        viewBox="0 0 780 220"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={
@@ -131,7 +131,7 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
           {/* Top Line: KERALA */}
           <text
             x="0"
-            y="92"
+            y="90"
             fill="#0B387A"
             fontFamily="'Arial Black', 'Helvetica Neue', 'Impact', sans-serif"
             fontWeight="900"
@@ -141,63 +141,45 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
             KERALA
           </text>
 
-          {/* Middle Line: BOARD UN EDU */}
-          <g transform="translate(0, 148)">
-            <text
-              x="0"
-              y="0"
-              fill="#2B7B38"
-              fontFamily="'Arial Black', 'Helvetica Neue', sans-serif"
-              fontWeight="900"
-              fontSize="48"
-              letterSpacing="1"
-            >
-              BOARD
-            </text>
-            <text
-              x="200"
-              y="0"
-              fill="#EF6C00"
-              fontFamily="'Arial Black', 'Helvetica Neue', sans-serif"
-              fontWeight="900"
-              fontSize="48"
-              letterSpacing="1"
-            >
-              UN
-            </text>
-            <text
-              x="292"
-              y="0"
-              fill="#0B387A"
-              fontFamily="'Arial Black', 'Helvetica Neue', sans-serif"
-              fontWeight="900"
-              fontSize="48"
-              letterSpacing="1"
-            >
-              EDU
-            </text>
-          </g>
+          {/* Top Divider Line under KERALA */}
+          <line x1="0" y1="106" x2="520" y2="106" stroke="#0B387A" strokeWidth="2.5" />
+
+          {/* Middle Line: BOARD OF HIGHER SECONDARY EXAMINATION */}
+          <text
+            x="0"
+            y="142"
+            fill="#126B2E"
+            fontFamily="'Arial Black', 'Arial', 'Helvetica Neue', sans-serif"
+            fontWeight="900"
+            fontSize="24"
+            letterSpacing="0.8"
+          >
+            BOARD OF HIGHER SECONDARY EXAMINATION
+          </text>
+
+          {/* Bottom Divider Line under BOARD OF HIGHER... */}
+          <line x1="0" y1="156" x2="520" y2="156" stroke="#0B387A" strokeWidth="2.5" />
 
           {/* Bottom Line: LEARN • GROW • SUCCEED with Side Lines */}
-          <g transform="translate(0, 185)">
+          <g transform="translate(0, 192)">
             {/* Left rule */}
-            <line x1="0" y1="-8" x2="60" y2="-8" stroke="#0B387A" strokeWidth="2.5" />
+            <line x1="0" y1="-7" x2="80" y2="-7" stroke="#0B387A" strokeWidth="2.5" />
 
             {/* Subtitle Text */}
             <text
-              x="72"
-              y="-2"
+              x="92"
+              y="-1"
               fill="#0B387A"
               fontFamily="Arial, 'Helvetica Neue', sans-serif"
               fontWeight="800"
-              fontSize="21"
+              fontSize="20"
               letterSpacing="2"
             >
               LEARN • GROW • SUCCEED
             </text>
 
             {/* Right rule */}
-            <line x1="392" y1="-8" x2="445" y2="-8" stroke="#0B387A" strokeWidth="2.5" />
+            <line x1="440" y1="-7" x2="520" y2="-7" stroke="#0B387A" strokeWidth="2.5" />
           </g>
         </g>
       </svg>

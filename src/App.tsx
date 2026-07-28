@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { StudentResult } from './types';
-import { SAMPLE_STUDENTS, RECENT_NOTIFICATIONS, getStudentResult } from './data/mockResults';
+import { SAMPLE_STUDENTS, getStudentResult } from './data/mockResults';
 import { AnuHeader } from './components/AnuHeader';
 import { SearchForm } from './components/SearchForm';
-import { RecentNotifications } from './components/RecentNotifications';
 import { ResultSheet } from './components/ResultSheet';
 import { CustomResultModal } from './components/CustomResultModal';
 
@@ -126,24 +125,11 @@ export default function App() {
           </div>
 
           {/* Main Content Area */}
-          <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              {/* Left Search Portal (7 cols on lg) */}
-              <div className="lg:col-span-7">
-                <SearchForm
-                  onSearch={handleSearch}
-                  onOpenCreateModal={() => setIsModalOpen(true)}
-                />
-              </div>
-
-              {/* Right Recent Notifications Feed (5 cols on lg) */}
-              <div className="lg:col-span-5">
-                <RecentNotifications
-                  notifications={RECENT_NOTIFICATIONS}
-                  onSelectSample={handleSearch}
-                />
-              </div>
-            </div>
+          <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+            <SearchForm
+              onSearch={handleSearch}
+              onOpenCreateModal={() => setIsModalOpen(true)}
+            />
           </main>
 
           {/* Footer */}
