@@ -1,6 +1,7 @@
 import React from 'react';
 import { StudentResult } from '../types';
 import { AnuHeader } from './AnuHeader';
+import { GoogleDriveManager } from './GoogleDriveManager';
 import { Printer, ArrowLeft, CheckCircle2, Download, Share2 } from 'lucide-react';
 
 interface ResultSheetProps {
@@ -77,6 +78,11 @@ export const ResultSheet: React.FC<ResultSheetProps> = ({
               Modify / Edit Values
             </button>
           )}
+        </div>
+
+        {/* Google Drive Integration Manager */}
+        <div className="print:hidden">
+          <GoogleDriveManager currentStudent={student} />
         </div>
 
         {/* Result Sheet Container Card */}

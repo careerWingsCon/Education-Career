@@ -128,7 +128,7 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
 
         {/* ==================== RIGHT TEXT ==================== */}
         <g transform="translate(235, 0)">
-          {/* Top Line: KERRALA */}
+          {/* Top Line: KERALA */}
           <text
             x="0"
             y="92"
@@ -138,7 +138,7 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
             fontSize="78"
             letterSpacing="2"
           >
-            KERRALA
+            KERALA
           </text>
 
           {/* Middle Line: BOARD UN EDU */}

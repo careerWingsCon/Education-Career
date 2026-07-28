@@ -122,7 +122,7 @@ export default function App() {
 
           {/* Quick Notice Bar */}
           <div className="bg-[#12416C] text-sky-100 text-xs py-2 px-4 text-center border-b border-sky-900 font-medium">
-            Official Higher Secondary Examination Marks Portal | Kerrala Board Un Edu
+            Official Higher Secondary Examination Marks Portal | Kerala Board Un Edu
           </div>
 
           {/* Main Content Area */}
@@ -149,7 +149,7 @@ export default function App() {
           {/* Footer */}
           <footer className="mt-16 bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-500">
             <p className="font-semibold text-gray-700">
-              © {new Date().getFullYear()} Kerrala Board Un Edu. All Rights Reserved.
+              © {new Date().getFullYear()} Kerala Board Un Edu. All Rights Reserved.
             </p>
             <p className="mt-1">
               Maintained by Board IT Center &amp; Examination Cell | Learn • Grow • Succeed
