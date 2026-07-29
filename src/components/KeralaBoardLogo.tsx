@@ -3,187 +3,153 @@ import React from 'react';
 interface KeralaBoardLogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'responsive';
+  variant?: 'full' | 'emblem-only';
 }
 
-export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = '', size = 'responsive' }) => {
+// Government of Kerala Official State Emblem SVG Component
+export const KeralaStateEmblem: React.FC<{ className?: string }> = ({ className = "w-full h-full" }) => {
   return (
-    <div className={`flex items-center justify-center w-full ${className}`}>
-      <svg
-        viewBox="0 0 820 215"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={
-          size === 'sm'
-            ? 'h-8 w-auto'
-            : size === 'md'
-            ? 'h-11 w-auto'
-            : size === 'lg'
-            ? 'h-16 w-auto'
-            : 'w-full max-w-[380px] sm:max-w-[460px] md:max-w-[520px] h-auto drop-shadow-xs'
-        }
-      >
-        {/* ==================== LEFT EMBLEM ==================== */}
-        <g id="EmblemGroup" transform="translate(15, 0)">
-          {/* 3 Stars at the top */}
-          <path d="M110 18 L112.5 24 L119 24.5 L114 29 L115.5 35 L110 31.5 L104.5 35 L106 29 L101 24.5 L107.5 24 Z" fill="#0B387A" />
-          <path d="M85 24 L87.2 29.5 L93 30 L88.5 34 L89.8 39.5 L85 36.5 L80.2 39.5 L81.5 34 L77 30 L82.8 29.5 Z" fill="#0B387A" />
-          <path d="M135 24 L137.2 29.5 L143 30 L138.5 34 L139.8 39.5 L135 36.5 L130.2 39.5 L131.5 34 L127 30 L132.8 29.5 Z" fill="#0B387A" />
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Outer circular badge background */}
+      <circle cx="100" cy="100" r="98" fill="#FFFFFF" />
+      
+      <g stroke="#000000" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
+        {/* ==================== TOP: ASHOKA LIONS ==================== */}
+        <g id="AshokaCapital" transform="translate(100, 31)">
+          {/* Central Lion Head & Mane */}
+          <path d="M0 -15 C-4 -15 -6 -11 -5 -6 C-7 -6 -8 -1 -6 3 C-8 5 -8 10 -4 13 L4 13 C8 10 8 5 6 3 C8 -1 7 -6 5 -6 C6 -11 4 -15 0 -15 Z" fill="#000000" fillOpacity="0.12" />
+          <path d="M-3 -12 C-5 -14 -2 -15 0 -15 C2 -15 5 -14 3 -12" strokeWidth="1.8" />
+          <path d="M-5 -7 C-7 -8 -7 -4 -5 -3 M5 -7 C7 -8 7 -4 5 -3" />
+          {/* Eyes & Snout */}
+          <circle cx="-2" cy="-9" r="0.9" fill="#000000" stroke="none" />
+          <circle cx="2" cy="-9" r="0.9" fill="#000000" stroke="none" />
+          <path d="M-1.5 -6 L0 -4 L1.5 -6 M0 -4 L0 -2" strokeWidth="1.2" />
+          {/* Mane curls */}
+          <path d="M-4 -4 C-7 -3 -6 1 -4 2 M4 -4 C7 -3 6 1 4 2 M-3 3 C-6 5 -5 8 -2 10 M3 3 C6 5 5 8 2 10" />
 
-          {/* Outer Ring Arc */}
-          <path
-            d="M32 155 C12 120 18 65 52 40 C75 22 145 22 168 40 C202 65 208 120 188 155"
-            fill="none"
-            stroke="#0B387A"
-            strokeWidth="5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M22 150 C5 110 12 55 48 30 C75 12 145 12 172 30 C208 55 215 110 198 150"
-            fill="none"
-            stroke="#0B387A"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
+          {/* Left Profile Lion */}
+          <path d="M-5 -9 C-9 -11 -12 -7 -10 -3 C-13 -1 -12 4 -9 6 L-4 7" strokeWidth="1.4" />
+          {/* Right Profile Lion */}
+          <path d="M5 -9 C9 -11 12 -7 10 -3 C13 -1 12 4 9 6 L4 7" strokeWidth="1.4" />
 
-          {/* Graduation Cap (Mortarboard) */}
-          <g transform="translate(110, 52)">
-            {/* Cap top diamond */}
-            <path d="M0 -18 L48 -4 L0 10 L-48 -4 Z" fill="#0B387A" />
-            {/* Cap inner detail line */}
-            <path d="M0 -14 L40 -2 L0 8 L-40 -2 Z" fill="none" stroke="#FFFFFF" strokeWidth="1.5" />
-            {/* Cap base skull cap */}
-            <path d="M-22 2 C-22 12 22 12 22 2 L22 -1 C22 8 -22 8 -22 -1 Z" fill="#0B387A" />
-            {/* Tassel cord & hanging button */}
-            <circle cx="0" cy="-4" r="2.5" fill="#FFFFFF" />
-            <path d="M0 -4 Q24 -2 28 12 Q29 20 28 26" fill="none" stroke="#FFFFFF" strokeWidth="2.5" />
-            <path d="M26 24 L30 38 L24 38 Z" fill="#0B387A" />
-          </g>
-
-          {/* Left Laurel Wreath Leaves (Green) */}
-          <g fill="#2B7B38">
-            <path d="M50 62 C40 60 32 70 38 76 C46 72 48 64 50 62 Z" />
-            <path d="M42 78 C32 78 26 88 34 92 C40 88 42 80 42 78 Z" />
-            <path d="M38 96 C28 98 24 108 32 112 C38 106 38 98 38 96 Z" />
-            <path d="M38 114 C28 118 26 128 34 132 C40 126 38 116 38 114 Z" />
-            <path d="M44 132 C34 138 34 148 42 150 C46 144 44 134 44 132 Z" />
-            
-            {/* Inner row leaves */}
-            <path d="M60 74 C52 70 48 80 54 84 C60 80 60 76 60 74 Z" />
-            <path d="M54 90 C46 88 42 98 48 102 C54 98 54 92 54 90 Z" />
-            <path d="M50 108 C42 108 38 118 46 122 C52 116 50 110 50 108 Z" />
-            <path d="M54 126 C46 128 44 138 52 140 C56 134 54 128 54 126 Z" />
-            <path d="M64 142 C56 146 56 154 64 154 C68 148 66 144 64 142 Z" />
-          </g>
-
-          {/* Right Laurel Wreath Leaves (Green) */}
-          <g fill="#2B7B38">
-            <path d="M170 62 C180 60 188 70 182 76 C174 72 172 64 170 62 Z" />
-            <path d="M178 78 C188 78 194 88 186 92 C180 88 178 80 178 78 Z" />
-            <path d="M182 96 C192 98 196 108 188 112 C182 106 182 98 182 96 Z" />
-            <path d="M182 114 C192 118 194 128 186 132 C180 126 182 116 182 114 Z" />
-            <path d="M176 132 C186 138 186 148 178 150 C174 144 176 134 176 132 Z" />
-
-            {/* Inner row leaves */}
-            <path d="M160 74 C168 70 172 80 166 84 C160 80 160 76 160 74 Z" />
-            <path d="M166 90 C174 88 178 98 172 102 C166 98 166 92 166 90 Z" />
-            <path d="M170 108 C178 108 182 118 174 122 C168 116 170 110 170 108 Z" />
-            <path d="M166 126 C174 128 176 138 168 140 C164 134 166 128 166 126 Z" />
-            <path d="M156 142 C164 146 164 154 156 154 C152 148 154 144 156 142 Z" />
-          </g>
-
-          {/* Torch with Flame (Center) */}
-          <g transform="translate(110, 120)">
-            {/* Flame (Layered Gradient / Colors) */}
-            {/* Outer flame (Orange) */}
-            <path d="M0 -42 C12 -30 18 -18 18 -6 C18 10 8 16 0 16 C-8 16 -18 10 -18 -6 C-18 -18 -12 -30 0 -42 Z" fill="#EF6C00" />
-            {/* Inner flame (Yellow/Golden) */}
-            <path d="M0 -32 C8 -22 12 -12 12 -2 C12 8 5 12 0 12 C-5 12 -12 8 -12 -2 C-12 -12 -8 -22 0 -32 Z" fill="#FFB300" />
-            {/* Flame core brightness */}
-            <path d="M0 -22 C4 -15 6 -8 6 -1 C6 5 3 8 0 8 C-3 8 -6 5 -6 -1 C-6 -8 -4 -15 0 -22 Z" fill="#FFF176" />
-
-            {/* Torch Stand & Cup (Navy Blue) */}
-            <path d="M-18 14 L18 14 L12 28 L-12 28 Z" fill="#0B387A" />
-            <rect x="-16" y="10" width="32" height="4" fill="#0B387A" rx="1" />
-            {/* Torch handle */}
-            <path d="M-6 28 L6 28 L3 68 L-3 68 Z" fill="#0B387A" />
-            <path d="M-10 68 L10 68 L0 80 Z" fill="#0B387A" />
-          </g>
-
-          {/* Open Book Base at Bottom */}
-          <g transform="translate(110, 185)">
-            {/* Left page */}
-            <path d="M0 -10 Q-50 -25 -105 -5 L-100 12 Q-50 -5 0 8 Z" fill="#0B387A" />
-            <path d="M0 -6 Q-48 -20 -98 -2 L-95 8 Q-48 -8 0 4 Z" fill="#FFFFFF" />
-            <path d="M0 -2 Q-46 -15 -92 1 L-90 5 Q-46 -4 0 2 Z" fill="#0B387A" />
-
-            {/* Right page */}
-            <path d="M0 -10 Q50 -25 105 -5 L100 12 Q50 -5 0 8 Z" fill="#0B387A" />
-            <path d="M0 -6 Q48 -20 98 -2 L95 8 Q48 -8 0 4 Z" fill="#FFFFFF" />
-            <path d="M0 -2 Q46 -15 92 1 L90 5 Q46 -4 0 2 Z" fill="#0B387A" />
-
-            {/* Center Spine Book Fold */}
-            <path d="M-2 8 L0 -12 L2 8 Z" fill="#0B387A" />
-          </g>
+          {/* Abacus Base */}
+          <path d="M-14 13 L14 13 L12 18 L-12 18 Z" fill="#000000" fillOpacity="0.15" strokeWidth="1.6" />
+          {/* Ashoka Chakra in center */}
+          <circle cx="0" cy="15.5" r="2.2" strokeWidth="1.2" />
+          <path d="M0 13.3 L0 17.7 M-2.2 15.5 L2.2 15.5 M-1.5 14 L1.5 17 M-1.5 17 L1.5 14" strokeWidth="0.8" />
+          {/* Bull & Horse accents */}
+          <circle cx="-7" cy="15.5" r="1.1" fill="#000000" stroke="none" />
+          <circle cx="7" cy="15.5" r="1.1" fill="#000000" stroke="none" />
+          {/* Lotus Base */}
+          <path d="M-11 18 C-8 22 8 22 11 18 M-8 18 C-5 21 5 21 8 18" strokeWidth="1.2" />
         </g>
 
-        {/* ==================== RIGHT TEXT ==================== */}
-        <g transform="translate(235, 0)">
-          {/* Top Line: KERALA */}
-          <text
-            x="0"
-            y="88"
-            fill="#0B387A"
-            fontFamily="'Arial Black', 'Helvetica Neue', 'Impact', sans-serif"
-            fontWeight="900"
-            fontSize="72"
-            letterSpacing="2"
-          >
-            KERALA
-          </text>
+        {/* ==================== CENTER: SHANKHA (CONCH) ==================== */}
+        <g id="CenterShankha" transform="translate(100, 76)">
+          {/* Circular Frame around Shankha */}
+          <circle cx="0" cy="0" r="18" strokeWidth="1.4" strokeDasharray="3.5 1.5" />
+          <circle cx="0" cy="0" r="15" strokeWidth="1.2" />
 
-          {/* Top Divider Line under KERALA */}
-          <line x1="0" y1="104" x2="520" y2="104" stroke="#0B387A" strokeWidth="2.5" />
-
-          {/* Middle Line: BOARD OF HIGHER SECONDARY EXAMINATION */}
-          <text
-            x="0"
-            y="140"
-            fill="#126B2E"
-            fontFamily="'Arial Black', 'Arial', 'Helvetica Neue', sans-serif"
-            fontWeight="900"
-            fontSize="20"
-            letterSpacing="0.1"
-          >
-            BOARD OF HIGHER SECONDARY EXAMINATION
-          </text>
-
-          {/* Bottom Divider Line under BOARD OF HIGHER... */}
-          <line x1="0" y1="154" x2="520" y2="154" stroke="#0B387A" strokeWidth="2.5" />
-
-          {/* Bottom Line: LEARN • GROW • SUCCEED with Side Lines */}
-          <g transform="translate(0, 188)">
-            {/* Left rule */}
-            <line x1="0" y1="-7" x2="80" y2="-7" stroke="#0B387A" strokeWidth="2.5" />
-
-            {/* Subtitle Text */}
-            <text
-              x="92"
-              y="-1"
-              fill="#0B387A"
-              fontFamily="Arial, 'Helvetica Neue', sans-serif"
-              fontWeight="800"
-              fontSize="18"
-              letterSpacing="1.8"
-            >
-              LEARN • GROW • SUCCEED
-            </text>
-
-            {/* Right rule */}
-            <line x1="435" y1="-7" x2="520" y2="-7" stroke="#0B387A" strokeWidth="2.5" />
-          </g>
+          {/* Shankha (Conch Shell) Body */}
+          <path d="M0 -12 C5 -12 11 -7 11 0 C11 7 5 12 0 14 C-5 12 -11 7 -11 0 C-11 -7 -5 -12 0 -12 Z" fill="#000000" fillOpacity="0.1" strokeWidth="1.5" />
+          {/* Spiral Lines */}
+          <path d="M0 -10 C3 -10 7 -6 7 0 C7 5 3 9 0 11 C-3 9 -7 5 -7 0 C-7 -6 -3 -10 0 -10 Z" strokeWidth="1.2" />
+          <path d="M0 -7 C2 -7 4 -4 4 0 C4 3 2 6 0 8 C-2 6 -4 3 -4 0 C-4 -4 -2 -7 0 -7 Z" strokeWidth="1" />
+          <path d="M0 -4 Q2 0 0 4 Q-2 0 0 -4 Z" fill="#000000" stroke="none" />
         </g>
-      </svg>
+
+        {/* ==================== LEFT ELEPHANT ==================== */}
+        <g id="LeftElephant" transform="translate(56, 110)">
+          {/* Body Outline */}
+          <path d="M22 -32 C12 -32 -2 -22 -10 -6 C-16 6 -14 26 -10 38 L-6 38 L-6 22 L2 22 L2 38 L8 38 L8 18 L16 18 L16 38 L22 38 L22 0 C26 -12 26 -24 22 -32 Z" fill="#000000" fillOpacity="0.08" strokeWidth="1.5" />
+          {/* Head & Trunk curving up toward the Shankha */}
+          <path d="M12 -25 C18 -34 26 -38 30 -48 C28 -50 22 -46 16 -38 C10 -32 6 -26 6 -20" strokeWidth="1.6" />
+          {/* Trunk tip curl */}
+          <path d="M30 -48 C32 -52 28 -52 26 -48" strokeWidth="1.2" />
+          {/* Big Ear */}
+          <path d="M4 -22 C-4 -22 -10 -12 -6 0 C-2 8 4 2 4 -22 Z" fill="#FFFFFF" strokeWidth="1.4" />
+          <path d="M2 -18 C-3 -18 -7 -10 -4 0" strokeWidth="1" />
+          {/* Eye */}
+          <circle cx="10" cy="-24" r="1.2" fill="#000000" stroke="none" />
+          {/* Tusk */}
+          <path d="M14 -16 C20 -14 25 -10 27 -6 C23 -8 17 -12 13 -14 Z" fill="#FFFFFF" strokeWidth="1.2" />
+          {/* Back wrinkles & leg details */}
+          <path d="M-4 -2 C-2 -4 4 -4 6 -2" strokeWidth="1" />
+          <path d="M-6 26 L2 26 M10 26 L18 26" strokeWidth="1.2" />
+        </g>
+
+        {/* ==================== RIGHT ELEPHANT (MIRRORED) ==================== */}
+        <g id="RightElephant" transform="translate(144, 110) scale(-1, 1)">
+          {/* Body Outline */}
+          <path d="M22 -32 C12 -32 -2 -22 -10 -6 C-16 6 -14 26 -10 38 L-6 38 L-6 22 L2 22 L2 38 L8 38 L8 18 L16 18 L16 38 L22 38 L22 0 C26 -12 26 -24 22 -32 Z" fill="#000000" fillOpacity="0.08" strokeWidth="1.5" />
+          {/* Head & Trunk curving up toward the Shankha */}
+          <path d="M12 -25 C18 -34 26 -38 30 -48 C28 -50 22 -46 16 -38 C10 -32 6 -26 6 -20" strokeWidth="1.6" />
+          {/* Trunk tip curl */}
+          <path d="M30 -48 C32 -52 28 -52 26 -48" strokeWidth="1.2" />
+          {/* Big Ear */}
+          <path d="M4 -22 C-4 -22 -10 -12 -6 0 C-2 8 4 2 4 -22 Z" fill="#FFFFFF" strokeWidth="1.4" />
+          <path d="M2 -18 C-3 -18 -7 -10 -4 0" strokeWidth="1" />
+          {/* Eye */}
+          <circle cx="10" cy="-24" r="1.2" fill="#000000" stroke="none" />
+          {/* Tusk */}
+          <path d="M14 -16 C20 -14 25 -10 27 -6 C23 -8 17 -12 13 -14 Z" fill="#FFFFFF" strokeWidth="1.2" />
+          {/* Back wrinkles & leg details */}
+          <path d="M-4 -2 C-2 -4 4 -4 6 -2" strokeWidth="1" />
+          <path d="M-6 26 L2 26 M10 26 L18 26" strokeWidth="1.2" />
+        </g>
+
+        {/* ==================== BOTTOM: PEDESTAL & SCROLL ==================== */}
+        <g id="BottomScroll" transform="translate(100, 150)">
+          {/* Ground / Pedestal line */}
+          <path d="M-68 0 Q0 6 68 0" strokeWidth="1.8" />
+          
+          {/* Banner Ribbons */}
+          <path d="M-60 2 Q0 10 60 2 L56 16 Q0 24 -56 16 Z" fill="#FFFFFF" strokeWidth="1.5" />
+          <path d="M-52 5 Q0 12 52 5" strokeWidth="1" />
+
+          {/* Banner text: GOVERNMENT OF KERALA */}
+          <text x="0" y="12" textAnchor="middle" fontSize="6" fontWeight="900" fontFamily="sans-serif" fill="#000000" stroke="none" letterSpacing="0.6">
+            GOVERNMENT OF KERALA
+          </text>
+
+          {/* Bottom Ornamental Base Arch */}
+          <path d="M-45 20 Q0 28 45 20 M-35 23 Q0 29 35 23" strokeWidth="1.2" />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = '', size = 'responsive', variant = 'full' }) => {
+  if (variant === 'emblem-only') {
+    return (
+      <div className={`shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center p-1 sm:p-1.5 shadow-md border-2 border-white/90 ${className}`}>
+        <KeralaStateEmblem className="w-full h-full" />
+      </div>
+    );
+  }
+
+  return (
+    <div className={`flex items-center gap-3 sm:gap-5 select-none ${className}`}>
+      {/* Circular Emblem Badge */}
+      <div className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center p-1 sm:p-1.5 shadow-md border-2 border-white/90">
+        <KeralaStateEmblem className="w-full h-full" />
+      </div>
+
+      {/* Text Lines */}
+      <div className="flex flex-col text-white justify-center leading-tight">
+        <span className="text-xs sm:text-sm md:text-base font-semibold text-blue-100 tracking-wide font-sans">
+          Directorate of General Education, Government of Kerala
+        </span>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-sans my-0.5 sm:my-1 drop-shadow-xs">
+          Kerala Examination Results Portal
+        </h1>
+        <span className="text-xs sm:text-sm md:text-base text-blue-100/90 font-normal font-sans">
+          Official Online Verification Platform For HSE and VHSE examinations
+        </span>
+      </div>
     </div>
   );
 };
+
 
