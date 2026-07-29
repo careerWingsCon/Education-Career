@@ -6,7 +6,7 @@ export const SAMPLE_STUDENTS: Record<string, StudentResult> = {
     hallTicketNo: '6111158',
     department: 'Higher Secondary Education',
     course: 'HSE ( Higher Secondary Examination )',
-    year: '2026',
+    year: '2017',
     examination: 'SECOND YEAR HIGHER SECONDARY EXAMINATION',
     fatherName: 'MOHD ABDUL RAHIM',
     collegeName: 'Higher Secondary School, Guntur',
