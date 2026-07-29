@@ -14,12 +14,12 @@ export const KeralaBoardLogo: React.FC<KeralaBoardLogoProps> = ({ className = ''
         xmlns="http://www.w3.org/2000/svg"
         className={
           size === 'sm'
-            ? 'h-10 w-auto'
+            ? 'h-8 w-auto'
             : size === 'md'
-            ? 'h-14 w-auto'
+            ? 'h-11 w-auto'
             : size === 'lg'
-            ? 'h-20 w-auto'
-            : 'w-full max-w-[500px] sm:max-w-[600px] md:max-w-[660px] h-auto drop-shadow-xs'
+            ? 'h-16 w-auto'
+            : 'w-full max-w-[380px] sm:max-w-[460px] md:max-w-[520px] h-auto drop-shadow-xs'
         }
       >
         {/* ==================== LEFT EMBLEM ==================== */}

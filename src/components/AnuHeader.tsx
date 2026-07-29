@@ -17,7 +17,7 @@ export const AnuHeader: React.FC = () => {
       </div>
 
       {/* Main Header Container with Kerrala Board Un Edu Logo */}
-      <div className="max-w-5xl mx-auto px-4 py-2.5 sm:py-3.5 flex items-center justify-center">
+      <div className="max-w-4xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-center">
         <KeralaBoardLogo size="responsive" />
       </div>
     </header>

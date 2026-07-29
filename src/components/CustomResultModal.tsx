@@ -15,7 +15,7 @@ export const CustomResultModal: React.FC<CustomResultModalProps> = ({
   onSave,
   initialData,
 }) => {
-  const [studentName, setStudentName] = useState(initialData?.studentName || 'MOHD AMEEN WASIF');
+  const [studentName, setStudentName] = useState(initialData?.studentName || 'MOHD MUSTAFA ALI');
   const [hallTicketNo, setHallTicketNo] = useState(initialData?.hallTicketNo || 'Y234023365');
   const [department, setDepartment] = useState(initialData?.department || 'Under Graduation');
   const [course, setCourse] = useState(initialData?.course || 'HSE ( Higher Secondary Examination )');

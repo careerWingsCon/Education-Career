@@ -2,7 +2,7 @@ import { StudentResult, ExamNotification } from '../types';
 
 export const SAMPLE_STUDENTS: Record<string, StudentResult> = {
   '6111158': {
-    studentName: 'MOHD AMEEN WASIF',
+    studentName: 'MOHD MUSTAFA ALI',
     hallTicketNo: '6111158',
     department: 'Higher Secondary Education',
     course: 'HSE ( Higher Secondary Examination )',
@@ -90,7 +90,7 @@ export const SAMPLE_STUDENTS: Record<string, StudentResult> = {
     ],
   },
   'Y234023365': {
-    studentName: 'MOHD AMEEN WASIF',
+    studentName: 'MOHD MUSTAFA ALI',
     hallTicketNo: 'Y234023365',
     department: 'Higher Secondary Education',
     course: 'HSE ( Higher Secondary Examination )',
@@ -178,7 +178,7 @@ export const SAMPLE_STUDENTS: Record<string, StudentResult> = {
     ],
   },
   'SSLC1001': {
-    studentName: 'MOHD AMEEN WASIF',
+    studentName: 'MOHD MUSTAFA ALI',
     hallTicketNo: 'SSLC1001',
     department: 'Secondary School Education',
     course: 'SSLC ( Secondary School Leaving Certificate - Class 10 )',
@@ -200,7 +200,7 @@ export const SAMPLE_STUDENTS: Record<string, StudentResult> = {
     ],
   },
   'HSE1002': {
-    studentName: 'MOHD AMEEN WASIF',
+    studentName: 'MOHD MUSTAFA ALI',
     hallTicketNo: 'HSE1002',
     department: 'Higher Secondary Education',
     course: 'HSE ( Higher Secondary Examination )',

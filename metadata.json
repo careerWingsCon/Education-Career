@@ -1,6 +1,6 @@
 {
-  "name": "Acharya Nagarjuna University Results Portal",
-  "description": "Student marks and examination results portal for Acharya Nagarjuna University featuring authentic result sheet format, print capability, and hall ticket lookup.",
+  "name": "KBHSE-Results",
+  "description": "Board of Higher Secondary Examination Kerala results portal featuring authentic result sheet format, hall ticket lookup, and mark sheet verification.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
