@@ -137,9 +137,6 @@ export default function App() {
             <p className="font-semibold text-gray-700">
               © {new Date().getFullYear()} BOARD OF HIGHER SECONDARY EXAMINATION. All Rights Reserved.
             </p>
-            <p className="mt-1">
-              Maintained by Board IT Center &amp; Examination Cell | Learn • Grow • Succeed
-            </p>
           </footer>
         </div>
       )}
