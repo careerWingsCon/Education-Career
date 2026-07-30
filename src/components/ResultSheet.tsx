@@ -1,7 +1,7 @@
 import React from 'react';
 import { StudentResult } from '../types';
 import { AnuHeader } from './AnuHeader';
-import { Printer, ArrowLeft, CheckCircle2, Download, Share2 } from 'lucide-react';
+import { Printer, ArrowLeft, Download, Share2 } from 'lucide-react';
 
 interface ResultSheetProps {
   student: StudentResult;
@@ -159,30 +159,63 @@ export const ResultSheet: React.FC<ResultSheetProps> = ({
 
             <div className="overflow-x-auto">
               {student.subjects.some((s) => s.firstYear) ? (
-                /* Detailed Higher Secondary Marks Table - Second Year Only */
-                <table className="w-full text-xs sm:text-sm border-collapse border border-gray-400 text-center font-sans">
+                /* Detailed Higher Secondary Marks Table - Full 3-Section Format (Matching Image) */
+                <table className="w-full min-w-[760px] text-xs sm:text-sm border-collapse border border-gray-400 text-center font-sans table-fixed">
+                  <colgroup>
+                    <col className="w-[28%]" /> {/* SUBJECTS */}
+                    <col className="w-[4.2%]" /> {/* 1st CE */}
+                    <col className="w-[4.2%]" /> {/* 1st TE */}
+                    <col className="w-[5.6%]" /> {/* 1st Total */}
+                    <col className="w-[4.2%]" /> {/* 2nd CE */}
+                    <col className="w-[4.2%]" /> {/* 2nd PE */}
+                    <col className="w-[4.2%]" /> {/* 2nd TE */}
+                    <col className="w-[5.6%]" /> {/* 2nd Total */}
+                    <col className="w-[4.2%]" /> {/* GT CE */}
+                    <col className="w-[4.2%]" /> {/* GT PE */}
+                    <col className="w-[4.2%]" /> {/* GT TE */}
+                    <col className="w-[6%]" />   {/* GT Total */}
+                    <col className="w-[11%]" />  {/* Grade Obtained */}
+                    <col className="w-[11.4%]" />{/* Grade in Words */}
+                  </colgroup>
                   <thead>
                     <tr className="border-b border-gray-400 bg-gray-50 uppercase text-gray-800 font-bold">
-                      <th rowSpan={2} className="py-2 px-3 text-left border-r border-gray-400 font-bold min-w-[200px]">
+                      <th rowSpan={2} className="py-2 px-2 text-left border-r border-gray-400 font-bold">
                         SUBJECTS
                       </th>
-                      <th colSpan={4} className="py-1.5 px-2 border-r border-gray-400 text-center font-bold">
-                        MARKS OBTAINED
+                      <th colSpan={3} className="py-1.5 px-1 border-r border-gray-400 text-center font-bold">
+                        FIRST YEAR
                       </th>
-                      <th rowSpan={2} className="py-2 px-2 border-r border-gray-400 text-center font-bold w-24">
-                        Grade Obtained
+                      <th colSpan={4} className="py-1.5 px-1 border-r border-gray-400 text-center font-bold">
+                        SECOND YEAR
                       </th>
-                      <th rowSpan={2} className="py-2 px-2 text-center font-bold w-28">
-                        Grade in Words
+                      <th colSpan={4} className="py-1.5 px-1 border-r border-gray-400 text-center font-bold">
+                        GRAND TOTAL
+                      </th>
+                      <th rowSpan={2} className="py-2 px-1 border-r border-gray-400 text-center font-bold leading-snug">
+                        GRADE OBTAINED
+                      </th>
+                      <th rowSpan={2} className="py-2 px-1 text-center font-bold leading-snug">
+                        GRADE IN WORDS
                       </th>
                     </tr>
 
                     <tr className="border-b border-gray-400 bg-gray-50 text-gray-800 text-xs font-semibold">
-                      {/* Marks Breakdown */}
-                      <th className="py-1 px-2 border-r border-gray-400">CE</th>
-                      <th className="py-1 px-2 border-r border-gray-400">PE</th>
-                      <th className="py-1 px-2 border-r border-gray-400">TE</th>
-                      <th className="py-1 px-2 border-r border-gray-400 font-bold">Total</th>
+                      {/* First Year */}
+                      <th className="py-1 px-0.5 border-r border-gray-400">CE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400">TE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400 font-bold">Total</th>
+
+                      {/* Second Year */}
+                      <th className="py-1 px-0.5 border-r border-gray-400">CE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400">PE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400">TE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400 font-bold">Total</th>
+
+                      {/* Grand Total */}
+                      <th className="py-1 px-0.5 border-r border-gray-400">CE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400">PE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400">TE</th>
+                      <th className="py-1 px-0.5 border-r border-gray-400 font-bold">Total</th>
                     </tr>
                   </thead>
 
@@ -190,59 +223,63 @@ export const ResultSheet: React.FC<ResultSheetProps> = ({
                     {student.subjects.map((subj, idx) => (
                       <tr key={idx} className="border-b border-gray-400 hover:bg-gray-50/50 transition-colors">
                         {/* Subject Title */}
-                        <td className="py-2.5 px-3 text-left font-bold text-gray-900 uppercase border-r border-gray-400 leading-snug">
+                        <td className="py-2.5 px-2 text-left font-bold text-gray-900 uppercase border-r border-gray-400 leading-snug break-words">
                           {subj.subjectName}
                         </td>
 
-                        {/* Marks Breakdown: CE, PE, TE, Total */}
-                        <td className="py-2 px-2 border-r border-gray-400 font-semibold text-gray-800">
+                        {/* First Year */}
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
+                          {subj.firstYear?.ce ?? '--'}
+                        </td>
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
+                          {subj.firstYear?.te ?? '--'}
+                        </td>
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-bold text-gray-900">
+                          {subj.firstYear?.total ?? '--'}
+                        </td>
+
+                        {/* Second Year */}
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
                           {subj.secondYear?.ce ?? '--'}
                         </td>
-                        <td className="py-2 px-2 border-r border-gray-400 font-semibold text-gray-800">
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
                           {subj.secondYear?.pe ?? '--'}
                         </td>
-                        <td className="py-2 px-2 border-r border-gray-400 font-semibold text-gray-800">
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
                           {subj.secondYear?.te ?? '--'}
                         </td>
-                        <td className="py-2 px-2 border-r border-gray-400 font-extrabold text-gray-950 bg-gray-50/50">
-                          {subj.secondYear?.total ?? subj.total}
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-bold text-gray-900">
+                          {subj.secondYear?.total ?? '--'}
+                        </td>
+
+                        {/* Grand Total */}
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
+                          {subj.grandTotal?.ce ?? '--'}
+                        </td>
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
+                          {subj.grandTotal?.pe ?? '--'}
+                        </td>
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-semibold text-gray-800">
+                          {subj.grandTotal?.te ?? '--'}
+                        </td>
+                        <td className="py-2 px-0.5 border-r border-gray-400 font-extrabold text-gray-950 bg-gray-50/50">
+                          {subj.grandTotal?.total ?? subj.total}
                         </td>
 
                         {/* Grade Obtained */}
-                        <td className="py-2 px-2 border-r border-gray-400 font-bold text-gray-900">
+                        <td className="py-2 px-1 border-r border-gray-400 font-bold text-gray-900">
                           {subj.grade}
                         </td>
 
                         {/* Grade in Words */}
-                        <td className="py-2 px-2 font-bold text-gray-900">
+                        <td className="py-2 px-1 font-bold text-gray-900">
                           {subj.gradeInWords || (subj.grade === 'A+' ? 'A plus' : subj.grade === 'B+' ? 'B plus' : 'A grade')}
                         </td>
                       </tr>
                     ))}
                   </tbody>
 
-                  <tfoot>
-                    <tr className="border-t-2 border-gray-400 bg-gray-100/90 font-bold text-gray-900 text-xs sm:text-sm">
-                      <td className="py-2.5 px-3 text-left uppercase border-r border-gray-400 font-extrabold">
-                        GRAND TOTAL MARKS
-                      </td>
-                      <td className="py-2 px-2 border-r border-gray-400 font-bold">
-                        {student.subjects.reduce((acc, s) => acc + (Number(s.secondYear?.ce) || 0), 0) || '--'}
-                      </td>
-                      <td className="py-2 px-2 border-r border-gray-400 font-bold">
-                        {student.subjects.reduce((acc, s) => acc + (Number(s.secondYear?.pe) || 0), 0) || '--'}
-                      </td>
-                      <td className="py-2 px-2 border-r border-gray-400 font-bold">
-                        {student.subjects.reduce((acc, s) => acc + (Number(s.secondYear?.te) || 0), 0) || '--'}
-                      </td>
-                      <td className="py-2 px-2 border-r border-gray-400 font-black text-emerald-950 bg-emerald-100/70 text-sm">
-                        {totalMarksObtained} / {totalMaxMarks}
-                      </td>
-                      <td colSpan={2} className="py-2 px-3 text-right font-black text-emerald-950 bg-emerald-100/70">
-                        PERCENTAGE: <span className="text-base font-mono font-extrabold ml-1.5 text-emerald-900">{percentage}%</span>
-                      </td>
-                    </tr>
-                  </tfoot>
+
                 </table>
               ) : (
                 /* Standard University Marks Table */
@@ -316,50 +353,7 @@ export const ResultSheet: React.FC<ResultSheetProps> = ({
             </div>
           </div>
 
-          {/* Performance & Status Summary */}
-          <div className="bg-emerald-50/70 border border-emerald-200 rounded-lg p-4 mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 print:border-gray-300 print:bg-white">
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-emerald-600 flex-shrink-0" />
-              <div>
-                <p className="text-xs text-emerald-800 font-bold uppercase tracking-wider">
-                  Result Status
-                </p>
-                <p className="text-base sm:text-lg font-extrabold text-emerald-900">
-                  {student.resultStatus || 'PASSED IN FIRST CLASS WITH DISTINCTION'}
-                </p>
-              </div>
-            </div>
 
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-right sm:text-left border-t md:border-t-0 md:border-l border-emerald-200 pt-3 md:pt-0 md:pl-6 w-full md:w-auto justify-between sm:justify-end">
-              <div>
-                <span className="text-[11px] text-emerald-800 font-semibold uppercase block">TOTAL MARKS</span>
-                <span className="text-base sm:text-lg font-extrabold text-emerald-950 font-mono">
-                  {totalMarksObtained} <span className="text-xs text-gray-500 font-normal">/ {totalMaxMarks}</span>
-                </span>
-              </div>
-
-              <div className="border-l border-emerald-200 pl-4 sm:pl-6">
-                <span className="text-[11px] text-emerald-800 font-semibold uppercase block">PERCENTAGE</span>
-                <span className="text-base sm:text-lg font-extrabold text-emerald-950 font-mono">
-                  {percentage}%
-                </span>
-              </div>
-
-              {student.sgpa && (
-                <div className="border-l border-emerald-200 pl-4 sm:pl-6">
-                  <span className="text-[11px] text-emerald-800 font-semibold uppercase block">SGPA</span>
-                  <span className="text-base sm:text-lg font-bold text-emerald-950 font-mono">{student.sgpa.toFixed(2)}</span>
-                </div>
-              )}
-
-              {student.cgpa && (
-                <div className="border-l border-emerald-200 pl-4 sm:pl-6">
-                  <span className="text-[11px] text-emerald-800 font-semibold uppercase block">CGPA</span>
-                  <span className="text-base sm:text-lg font-bold text-emerald-950 font-mono">{student.cgpa.toFixed(2)}</span>
-                </div>
-              )}
-            </div>
-          </div>
 
 
 
