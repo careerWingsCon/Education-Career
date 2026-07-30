@@ -1,7 +1,6 @@
 import React from 'react';
 import { StudentResult } from '../types';
 import { AnuHeader } from './AnuHeader';
-import { GoogleDriveManager } from './GoogleDriveManager';
 import { Printer, ArrowLeft, CheckCircle2, Download, Share2 } from 'lucide-react';
 
 interface ResultSheetProps {
@@ -69,20 +68,7 @@ export const ResultSheet: React.FC<ResultSheetProps> = ({
             More result
           </button>
 
-          {onEditStudent && (
-            <button
-              onClick={onEditStudent}
-              id="btn-edit-result"
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white font-medium text-sm rounded transition-colors shadow-xs"
-            >
-              Modify / Edit Values
-            </button>
-          )}
-        </div>
 
-        {/* Google Drive Integration Manager */}
-        <div className="print:hidden">
-          <GoogleDriveManager currentStudent={student} />
         </div>
 
         {/* Result Sheet Container Card */}
@@ -131,7 +117,7 @@ export const ResultSheet: React.FC<ResultSheetProps> = ({
 
                   <tr className="border-b border-gray-400">
                     <th className="py-2.5 px-4 font-semibold text-gray-700 bg-gray-50/50 border-r border-gray-400">
-                      Course
+                      Group
                     </th>
                     <td className="py-2.5 px-4 text-gray-900 font-medium">
                       {student.course}
@@ -375,24 +361,7 @@ export const ResultSheet: React.FC<ResultSheetProps> = ({
             </div>
           </div>
 
-          {/* Official Verification Signatures Footer */}
-          <div className="mt-12 pt-6 border-t border-gray-300 flex flex-col sm:flex-row items-end justify-between gap-6 text-xs text-gray-600">
-            <div>
-              <p className="font-semibold text-gray-800">Date of Publication:</p>
-              <p className="font-medium text-gray-700">{student.declarationDate || '25-07-2026'}</p>
-              <p className="mt-2 text-[11px] text-gray-500 max-w-md italic leading-tight">
-                Disclaimer: Neither ANU nor IT Center is responsible for any inadvertent error that may have crept in the results being published on NET. The results published on net are for immediate information to the examinees.
-              </p>
-            </div>
 
-            <div className="text-center sm:text-right flex flex-col items-center sm:items-end">
-              <div className="w-32 h-10 mb-1 border-b border-gray-400 flex items-center justify-center font-serif italic text-gray-700 text-sm opacity-80">
-                ( Controller Seal )
-              </div>
-              <p className="font-bold text-gray-900 uppercase">Controller of Examinations</p>
-              <p className="text-[11px] text-gray-600">Acharya Nagarjuna University</p>
-            </div>
-          </div>
 
         </div>
       </main>

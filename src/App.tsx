@@ -64,16 +64,16 @@ export default function App() {
       'BPHARM': 'B.Pharmacy ( Bachelor of Pharmacy )',
       'MPHARM': 'M.Pharmacy ( Pharmaceutics )',
       'PHARMD': 'Pharm.D ( Doctor of Pharmacy )',
-      'NA': 'HSE ( Higher Secondary Examination )',
+      'NA': 'Commerce',
     };
 
-    let formattedCourse = baseStudent.course || 'HSE ( Higher Secondary Examination )';
+    let formattedCourse = baseStudent.course || 'Commerce';
     if (course && courseMap[course]) {
       formattedCourse = courseMap[course];
     } else if (course && course !== 'Select Course' && course !== 'NA' && course !== '') {
       formattedCourse = course;
     } else if (department === 'HSE' || department === 'HSE (11 / 12th Class)' || department === 'SSLC' || department === 'SSLC (Secondary School Leaving Certificate)') {
-      formattedCourse = 'HSE ( Higher Secondary Examination )';
+      formattedCourse = 'Commerce';
     }
 
     // Override student metadata if selected in form

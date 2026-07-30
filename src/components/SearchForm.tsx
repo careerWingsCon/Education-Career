@@ -24,7 +24,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   // Generate array of years from 2026 down to 1990
   const yearOptions = Array.from({ length: 2026 - 1990 + 1 }, (_, i) => (2026 - i).toString());
 
-  // Generate random 6-character captcha code similar to AJ75KE
+  // Generate random 6-character captcha code
   const generateCaptcha = () => {
     const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
     let code = '';
@@ -77,7 +77,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
       onSearch(
         regNum,
         'HSE',
-        'HSE ( Higher Secondary Examination )',
+        'Commerce',
         'Regular',
         '2017'
       );
